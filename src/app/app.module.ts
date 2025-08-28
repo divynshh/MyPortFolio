@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ import { ContactService } from './contact.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResumeViewerComponent } from './resume-viewer/resume-viewer.component';
 import { BlogComponent } from './blog/blog.component';
+import { SwiperModule } from 'swiper/angular';  // Import SwiperModule here
 
 @NgModule({
   declarations: [
@@ -64,10 +65,14 @@ import { BlogComponent } from './blog/blog.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    SwiperModule,
     HttpClientModule,
     FormsModule, ReactiveFormsModule
+    
   ],
   providers: [ContactService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]  // <-- Add this line
+
 })
 export class AppModule { }

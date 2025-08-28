@@ -2,6 +2,12 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { SwiperModule } from 'swiper/angular';
+import { Swiper } from 'swiper';
+
+
+Swiper.use([Navigation, Pagination]);
 
 @Component({
   selector: 'app-root',
