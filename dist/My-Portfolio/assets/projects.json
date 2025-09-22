@@ -1,7 +1,8 @@
 [
+    {"title" : "Chauferly by CARS24", "details" : "A Driver on Demand Service in UAE launched by CARS24.", "image" :"../../assets/images/Chauferly.png" , "techStack" : ["Java","Springboot","GCP"],"link":"https://www.cars24.ae/chauferly-safe-driver-dubai/"},
+    {"title" : "Airtel Money (Africa)", "details" : "Mobile Financial Services provided by Airtel Africa in 14 Countries of African continent.", "image" :"../../assets/images/AirtelAfrica.png" , "techStack" : ["Java","Springboot","Redis","Kafka"],"link":"https://www.airtel.co.zm/airtel_money"},
     {"title" : "Portfolio Website", "details" : "A single page web application showcasing my skills, experience and interests.", "image" :"../../assets/images/Project1.png" , "techStack" : ["Angular","MaterialUI"],"link":"https://github.com/divynshh/MyPortFolio"},
     {"title" : "Emotion Detector", "details" : "A web application which detects stress/anxiety based on facial/voice expressions of a person.", "image" :"../../assets/images/Project2.jpg" , "techStack" : ["Python","Angular","Tensorflow"],"link":"https://github.com/divynshh/Emotion-Detector/blob/main/README.md"},
     {"title" : "AERO", "details" : "Application for Emergence Response Operation, is a mobile application that displays the availability of beds in a nearby hospitals.", "image" :"../../assets/images/Project3.png" , "techStack" : ["Android","Java","MySQL"],"link":"https://github.com/divynshh/AERO"}
-
     
 ]
