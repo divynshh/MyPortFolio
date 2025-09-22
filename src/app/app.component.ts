@@ -2,29 +2,25 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 import { Swiper } from 'swiper';
+import { ScreenSizeService } from './shared/screen-size.service';
 
 
-Swiper.use([Navigation, Pagination]);
+
+Swiper.use([Navigation, Pagination,Autoplay]);
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   title = 'My-Portfolio';
-
-
-  ngOnInit(): void {
-  }
 
   destroyed = new Subject<void>();
   currentScreenSize: string;
-
-  // Create a map to display breakpoint names for demonstration purposes.
   displayNameMap = new Map([
     [Breakpoints.XSmall, 'XSmall'],
     [Breakpoints.Small, 'Small'],
@@ -33,7 +29,10 @@ export class AppComponent {
     [Breakpoints.XLarge, 'XLarge'],
   ]);
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private screenSizeService: ScreenSizeService
+  ) {
     breakpointObserver
       .observe([
         Breakpoints.XSmall,
@@ -47,6 +46,7 @@ export class AppComponent {
         for (const query of Object.keys(result.breakpoints)) {
           if (result.breakpoints[query]) {
             this.currentScreenSize = this.displayNameMap.get(query) ?? 'Unknown';
+            this.screenSizeService.setScreenSize(this.currentScreenSize); // update service
           }
         }
       });
@@ -56,5 +56,4 @@ export class AppComponent {
     this.destroyed.next();
     this.destroyed.complete();
   }
-
 }

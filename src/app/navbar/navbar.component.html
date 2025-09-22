@@ -3,14 +3,15 @@
         <mat-drawer class="side-nav" #drawer position='end' mode='over' appOpenSidebarOnSwipe >
             <mat-selection-list [multiple]="false">
               <span *ngIf="!isBlog">
+                <mat-list-option (click)="viewResume()" class="list-option"  >Resume</mat-list-option>
               <mat-list-option (click)="scroll('about')" class="list-option" value="about">About</mat-list-option>
               <mat-list-option (click)="scroll('experience')" class="list-option" value="experience">Experience</mat-list-option>
               <mat-list-option (click)="scroll('projects')" class="list-option" value="projects">Projects</mat-list-option>
               <!-- <mat-list-option (click)="scroll('getInTouch')" class="list-option" value="projects">Get In Touch</mat-list-option> -->
-              <mat-list-option (click)="goToBlog()" class="list-option" value="Blog">Blog</mat-list-option>
+              <mat-list-option (click)="goToBlog()" class="list-option" value="Blog">Blogs</mat-list-option>
             </span>
             <span *ngIf="isBlog">
-              <mat-list-option (click)="goToBlog()" class="list-option" value="about">Home</mat-list-option>
+              <mat-list-option (click)="goToHome()" class="list-option" value="about">Home</mat-list-option>
 
             </span>
             </mat-selection-list>
@@ -24,13 +25,14 @@
               <span class="toolbar-title">Divyansh Chauhan</span>
               
                 <span class="toolbar-buttons" style="margin-left: 10%;" *ngIf="screenSize=='Large' || screenSize=='XLarge' || screenSize=='Medium'">
+                    <div ><button *ngIf="!isBlog" (click)="viewResume()" class="button" mat-button>Resume</button></div>
                     <div ><button *ngIf="!isBlog" (click)="scroll('about')" class="button" mat-button>About</button></div>
                     <div><button *ngIf="!isBlog" (click)="scroll('experience')"  class="button" mat-button>Experience</button></div>
                     <div><button *ngIf="!isBlog" (click)="scroll('projects')" class="button" mat-button>Projects</button></div>      
                     <!-- <div><button *ngIf="!isBlog" (click)="scroll('getInTouch')"  class="button" mat-button>Get In Touch</button></div> -->
-                    <div><button *ngIf="!isBlog" (click)="goToBlog()" class="button" mat-button>Blog</button></div>
+                    <div><button *ngIf="!isBlog" (click)="goToBlog()" class="button" mat-button>Blogs</button></div>
 
-                    <div><button *ngIf="isBlog" (click)="goToBlog()" class="button" mat-button>Home</button></div>
+                    <div><button *ngIf="isBlog" (click)="goToHome()" class="button" mat-button>Home</button></div>
                     <!-- <div><button (click)="openDialog()"  class="button" mat-button>Touch</button></div> -->
                 </span>
               

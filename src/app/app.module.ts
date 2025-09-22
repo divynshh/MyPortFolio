@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,11 +30,15 @@ import { ContactService } from './contact.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResumeViewerComponent } from './resume-viewer/resume-viewer.component';
 import { BlogComponent } from './blog/blog.component';
-import { SwiperModule } from 'swiper/angular';  // Import SwiperModule here
+import { SwiperModule } from 'swiper/angular';
+import { MediumEmbedComponent } from './medium-embed/medium-embed.component';  // Import SwiperModule here
+import { StripHtmlPipe } from './shared/strip-html.pipe'; // ✅ Adjust path
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    StripHtmlPipe,
     NavbarComponent,
     HeroComponent,
     HerotitleComponent,
@@ -52,7 +55,8 @@ import { SwiperModule } from 'swiper/angular';  // Import SwiperModule here
     GetInTouchComponent,
     ContactFormComponent,
     ResumeViewerComponent,
-    BlogComponent
+    BlogComponent,
+    MediumEmbedComponent
   ],
   imports: [
     BrowserModule,

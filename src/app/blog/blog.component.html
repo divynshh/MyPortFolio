@@ -1,24 +1,41 @@
-
-
-<div *ngIf="screenSize!='Large' && screenSize!='XLarge' && screenSize!='Medium'" class= 'container'>
-    <div class="container_content">
-        <div class="container_content_inner">
-            <div class="title"><h1 class="h1-lowres">Here lies my blog</h1>
-            </div>
-            <div class="par"><p class="p-lowres">...is what this page might say some day.</p></div>
+<mat-toolbar class='nav-bar'>    
+    <div class='toolbar-div'>
+      <div class="toolbar-title" (click)="goToHome()">Home 
+      </div>
+        <div style="display: flex; justify-content: flex-end;">
+            
         </div>
+      
     </div>
+</mat-toolbar>
 
-</div>
-
-<div *ngIf="screenSize=='Large' || screenSize=='XLarge' || screenSize=='Medium'" class= 'container'>
-    <div class="container_content">
-        <div class="container_content_inner">
-            <div class="title"><h1>Here lies my blog</h1>
-            </div>
-            <div class="par"><p >...is what this page might say some day.</p></div>
-        </div>
+  
+  <div class="hero-section">
+    <app-video
+    [screenSize]="screenSize"
+    mp4Src="../../assets/videos/hero-blog.mp4"
+    webmSrc="../../assets/videos/hero-blog.mp4"
+    m4vSrc="../../assets/videos/hero-blog.mp4">
+  </app-video>     
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Dive Into Tech</h1>
+      <p class="hero-subtitle">
+        Discover insights, tutorials, and guides to level up your coding journey.
+      </p>
     </div>
+  </div>
+  
+  <!-- Blog Container -->
+  <div class="blog-container">
 
-</div>
-    
+  
+    <div class="blog-grid">
+      <app-medium-embed
+        *ngFor="let post of posts"
+        [post]="post"
+        class="blog-card"
+      ></app-medium-embed>
+    </div>
+  </div>
+  

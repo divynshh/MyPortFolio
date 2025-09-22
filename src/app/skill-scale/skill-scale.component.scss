@@ -1,40 +1,25 @@
-.fa-star.checked {
-    color: orange;
-    font-size: 18px;
-    letter-spacing: 5px;
-  }
+.skill-scale {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+}
 
-  .fa-star-o {
-    color: rgba(199, 198, 198, 0.685);
-    font-size: 18px;
-    letter-spacing: 5px;
-    
-  }
+.skill-name {
+  flex: 1;
+  white-space: nowrap;
+}
 
+.stars {
+  display: flex;
+  gap: 2px;
+}
 
-  .skill-scale{
-      display: flex;
-      width: 100%;
-      height: fit-content;
-      align-items: flex-start;
-      justify-content: center;
-      color: white;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      text-align: left;
-  }
+.fa-star.filled {
+  color: orange;
+}
 
-  .title{
-    color: white;
-    height: 100%;
-    font-size: 13px;
-    width: 50%;
-    text-align: left;
-  }
-  .rating{
-    height: 100%;
-    text-align: left;
-    width: 50%;
-    text-shadow: none
-    
-  }
+.fa-star-o {
+  color: rgba(255, 255, 255, 0.3);
+}

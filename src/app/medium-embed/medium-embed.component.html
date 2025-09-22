@@ -1,0 +1,16 @@
+<mat-card class="medium-card" (click)="openPost(post.link)">
+    <div class="image-container">
+      <img mat-card-image [src]="imageUrl" alt="{{ post.title }}" />
+    </div>
+    <mat-card-content>
+      <div class="meta">
+        <span class="author">{{ post.author }}</span> |
+        <span class="date">{{ post.pubDate | date: 'MMM d, y' }}</span> |
+        <span class="read-time">{{ post.readTime }}</span>
+      </div>
+      <h2 class="title">{{ post.title }}</h2>
+      <p class="description">
+        {{ post.description | stripHtml | slice: 0: 200 }}...
+      </p>
+    </mat-card-content>
+  </mat-card>

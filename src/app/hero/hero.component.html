@@ -1,6 +1,11 @@
 <div  [@slideInOut]  class="body">
     <div class="hero-vid">
-        <app-video ></app-video>        
+        <app-video
+        [screenSize]="screenSize"
+        mp4Src="../../assets/videos/hero.mp4"
+        webmSrc="../../assets/videos/hero.webm"
+        m4vSrc="../../assets/videos/hero.m4v">
+      </app-video>     
     </div> 
     <app-herotitle2 [screenSize]='screenSize'></app-herotitle2>
 </div>

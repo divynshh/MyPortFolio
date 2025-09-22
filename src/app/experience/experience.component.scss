@@ -1,15 +1,31 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
-
-.body{
+.body {
+    color: #fffcfc;
     background-color: rgb(255, 255, 255);
-    height: fit-content;
+    height: 80%;
     margin-top: -10vh;
     padding-bottom: 15vh;
-}
+  }
+  
+//   .header {
+//     font-size: 38px;
+//     font-weight: bold;
+//     text-align: center;
+//     letter-spacing: 8px;
+//     margin-bottom: 10px;
+//     padding-top: 100px;
+//     text-transform: uppercase;
+//     color: #000;
+//   }
+  
+//   .sub-header {
+//     font-size: 20px;
+//     text-align: center;
+//     margin-bottom: 40px;
+//     color: #000;
+//   }
 
-.header{
-    color:black;
+  .header{
+    color:rgb(0, 0, 0);
     margin:0px;
     letter-spacing: 15px;
     text-align:center;
@@ -36,183 +52,97 @@
     align-items: center;
     justify-content: center;
 }
-
-.sub-header-lowres{
-    color:black;
-    margin:0px;
-    text-align:center;
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    font-size:22px;
-    height: 5vh;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.image-div{
-    
-    letter-spacing: 15px;
-    text-align:center;
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-size:38px;
-    font-weight:bold;
-    height: 100%;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    
-    
-}
-
-
-.image{
-    height: 60%;
-    width: 60%;
-    padding: 20px;
-    
-    
-}
-
-.image-airtel{
-    height: 50%;
-    width: 60%;
-    padding: 20px;
-    
-    
-}
-
-.work-ex-list{
-    color:black;
-    font-size: 14px;
-    display: flex;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-left: 10%;
-    text-align: justify;
-    padding-right: 50px;
-}
-
-
-
-
-.image-title{
-    display: flex;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    font-size:22px;
-    font-weight: 300;
-}
-
-
-.table-div{
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 40px;
-    border-collapse: collapse;
-}
-
-table, td {
-    border: none;
+  
+  .experience-grid {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
   }
-
-  td{
-    height: 100%;
-     width: 50%;
+  
+  .experience-grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
-
-  .subtitle{
-    color:black;
-    font-size: 15px;
-    display: flex;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
+  
+  .experience-card {
+    padding: 20px;
     text-align: center;
-}
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 20px;
+    height: 400px;
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+  
+  .image-div {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .company-logo {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+    margin: 15px 0;
+    line-height: 1.5;
+  }
+  
+  .work-ex-list {
+    font-size: 14px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .check-list li {
+    margin-bottom: 8px;
+  }
+  
 
-
-.image-lowres{
-    height: 90%;
+  .experience-carousel {
     width: 90%;
-    padding: 10px;
-    
-    
-}
-
-.image-div-lowres{
-        
-    display: flex;
-    height: 100%;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-
-.table-div-lowres{
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 40px;
-    border-collapse: collapse;
-}
-
-.image-lowres{
-    height: 90%;
-    width: 90%;
-    padding: 10px;
-    
-    
-}
-
-.image-div-lowres{
-        
-    display: flex;
-    height: 100%;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.header-lowres{
-    margin:0px;
-    letter-spacing: 5px;
-    text-align:center;
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-size:32px;
-    font-weight:bold;
-    height: 15vh;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    
-}
-
-.table-div-lowres tr {
-
-display: flex;
-
-}
-
-.table-div-lowres td {
-
-    width: 100%;
-
+    padding-left: 40px;
+    padding-right: 40px;
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #000; /* Change button color */
+      background-color: rgba(255, 255, 255, 0.8); /* Add a background */
+      border-radius: 50%; /* Make buttons circular */
+      width: 40px; /* Set button width */
+      height: 40px; /* Set button height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
-      
+  
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+      color: #fff; /* Change icon color on hover */
+      transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+  
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 16px; /* Adjust icon size */
+      font-weight: bold;
+    }
+   
+  }
+

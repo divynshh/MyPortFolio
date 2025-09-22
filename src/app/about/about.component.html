@@ -1,98 +1,35 @@
-<div class="body">
-    
-    <div *ngIf="screenSize=='Large' || screenSize=='XLarge'" class="table-div">
-        <div class="header">About</div>
-        <table style="height: 60vh; width: 100%;">
-            <tr style="display: flex;">
-                <td style="margin-top: 8%;">
-                    <div class="image-title"> 
-                        <br>
-                        Who's this guy?
-                        
-                    </div>
-                    <span >
-                        <!-- <div *ngIf="animateImage==true" id="imageDivAnimate" #imageDivAnimate class="image-div">
-                            <img class="image-top" src="../../assets/images/about.jpg" alt="Me">
-                            <img class="image-bottom" src="../../assets/images/scientist-myself.gif" alt="Me">
-                        </div> -->
-                   
+<div class="about-container">
+    <div class="header">About</div>
+    <!-- Row 3: Marquee -->
+    <div class="marquee-row">
+        <div class="marquee">
+          <div class="marquee-content">
+            <img *ngFor="let img of images" [src]="img" alt="profile" />
+            <img *ngFor="let img of images" [src]="img" alt="profile" />
+            <img *ngFor="let img of images" [src]="img" alt="profile" />
+          </div>
+        </div>
+      </div>
 
-                    <div  class="image-div">
-                        <img class="image-top" src="../../assets/images/about.jpg" alt="Me">
-                    </div>
-                </span>
-                    <div class="subtitle"><br>
-                        I am a Software Engineer at UnitedHealth Group in Hyderabad, IN.<br>
-                        I love solving problems.                        
-                    </div>
-                    <br>
-                    <div class="subtitle">
-                        <button (click)="viewResume()" mat-button style="color: black; background-color: white;" >View Resume</button>
-                    </div>
-                </td>
-                <td >
-                    <div class="skill-div">
-                        <!-- <div class="image-title">Skills</div> -->
-                        <br>
-                    </div>
-                    <div>
-                        <br>
-                        <app-skillset [skillSet]="'techSkills'"></app-skillset>
-                        <app-skillset [skillSet]="'otherSkills'"></app-skillset>
-                    </div>
- 
-                </td>
-            </tr>
-        </table>
+  <!-- Row 2: Intro text -->
+  <div class="intro-row">
+    <h2 class="title">Who's this guy?</h2>
+    <p class="subtitle">
+      I am a Software Engineer at <strong>CARS24</strong> Gurugram, IN.<br />
+      I love solving problems.
+    </p>
+    <button (click)="viewResume()" mat-flat-button color="primary">
+      View Resume
+    </button>
+  </div>
+
+
+
+   <!-- Row 1: Skills -->
+   <div class="skills-row">
+    <div class="skills-grid">
+      <app-skillset></app-skillset>
     </div>
-
-    <div *ngIf="screenSize!='Large' && screenSize!='XLarge'" class="table-div-lowres">
-        <div class="header-lowres">About</div>
-        <table style="height: 100%; width: 100%;">
-            <tr >
-                <td  >
-                    <div class="image-title"> 
-                        Who's this guy?
-                        
-                    </div>
-
-                    <span >
-                        <!-- <div *ngIf="animateImage==true" id="imageDivAnimate" #imageDivAnimate class="image-div-lowres">
-                            <img class="image-lowres-top" src="../../assets/images/about.jpg" alt="Me">
-                            <img class="image-lowres-bottom" src="../../assets/images/scientist-myself.gif" alt="Me">
-                        </div> -->
-                   
-
-                    <div class="image-div-lowres">
-                        <img class="image-lowres-top" src="../../assets/images/about.jpg" alt="Me">
-                    </div>
-                </span>
-
-                    <div class="subtitle"><br>
-                        I am a Software Engineer at UnitedHealth Group in Hyderabad, IN.<br>
-                        I love solving problems.                        
-                    </div>
-                    <br>
-                    <div class="subtitle">
-                        <button (click)="viewResume()" mat-button style="color: black; background-color: white; transform: scale(80%);" >View Resume</button>
-                    </div>
-                </td>
-                
-            </tr>
-            <br>
-            <tr style="margin-top: 8%;">
-                <td>
-                    <div class="skill-div">
-                        <!-- <div class="image-title">Skills</div> -->
-                        <br>
-                    </div>
-                    <br>
-                    <app-skillset [skillSet]="'techSkills'"></app-skillset>
-                    <app-skillset [skillSet]="'otherSkills'"></app-skillset>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-
+  </div>
+  </div>
+  

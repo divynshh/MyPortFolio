@@ -1,35 +1,17 @@
-import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-skill-scale',
   templateUrl: './skill-scale.component.html',
   styleUrls: ['./skill-scale.component.scss']
 })
-export class SkillScaleComponent implements OnInit {  
+export class SkillScaleComponent implements OnInit {
+  @Input() skillName!: string;
+  @Input() rating!: number;
 
-  constructor() { }
-  @Input() screenSize;
-  @Input() rating;
-  @Input() skillName;
-  
-  ratingArray: boolean[] = [false,false,false,false,false];
-  ngOnInit(): void {
-    
-    for(let i=0;i<this.rating;i++){
+  ratingArray: boolean[] = [];
 
-      this.ratingArray[i]=true;
-
-    }
-    
+  ngOnInit() {
+    this.ratingArray = Array.from({ length: 5 }, (_, i) => i < this.rating);
   }
-
-  fillRating(rating){
-  }
-
-  ngAfterViewInit() {
-    //console.log(this.elemRefs);
-    console.log("After VIew")
-    this.fillRating(this.rating);
-  } 
-
 }

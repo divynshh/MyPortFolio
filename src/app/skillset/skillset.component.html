@@ -1,54 +1,16 @@
-<span *ngIf="skillSet=='techSkills'">
-
-<div class="skill-section"> 
-    <div class="skill-title">Programming Languages</div>
-    <br>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'Java'" [rating]=4 ></app-skill-scale>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'TypeScript'" [rating]=3 ></app-skill-scale> 
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'Python'" [rating]=4 ></app-skill-scale> 
-</div>
-<br>
-
-<div class="skill-section"> 
-    <div class="skill-title">Back-End</div>
-    <br>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'SpringBoot'" [rating]=4 ></app-skill-scale>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'Object Oriented Design'" [rating]=5 ></app-skill-scale>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'MySQL'" [rating]=4 ></app-skill-scale>
-</div>
-<br>
-
-<div class="skill-section"> 
-    <div class="skill-title">Front-End</div>
-    <br>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'Angular'" [rating]=3 ></app-skill-scale>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'HTML + CSS'" [rating]=4 ></app-skill-scale>
-</div>
-<br>
-<div class="skill-section"> 
-    <div class="skill-title">Dev-Ops</div>
-    <br>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'Git & Github'" [rating]=5 ></app-skill-scale>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'Jenkins'" [rating]=4 ></app-skill-scale>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'OpenShift'" [rating]=3 ></app-skill-scale>
-    <app-skill-scale [screenSize]="screenSize" [skillName]="'Docker'" [rating]=3 ></app-skill-scale>
-</div>
-
-
-</span>
-
-<span *ngIf="skillSet=='otherSkills'">
-
-    <div class="skill-section"> 
-        <br>
-        <div class="skill-title">Other Cool Skills</div>
-        <br>
-        <app-skill-scale [screenSize]="screenSize" [skillName]="'Guitar'" [rating]=3 ></app-skill-scale>
-        <app-skill-scale [screenSize]="screenSize" [skillName]="'Piano'" [rating]=2 ></app-skill-scale>
-        <app-skill-scale [screenSize]="screenSize" [skillName]="'Video Editing'" [rating]=3 ></app-skill-scale>
-        
+<div class="skills-grid">
+    <div class="skill-card" *ngFor="let category of categories">
+      <h3 class="category-title">{{ category.title }}</h3>
+      <ul>
+        <li *ngFor="let skill of category.skills">
+          <span class="skill-name">{{ skill.name }}</span>
+          <mat-progress-bar
+            class="skill-bar"
+            mode="determinate"
+            [value]="skill.level">
+          </mat-progress-bar>
+        </li>
+      </ul>
     </div>
-
-
-
-</span>
+  </div>
+  

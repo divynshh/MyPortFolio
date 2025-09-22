@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MediumService } from '../medium-embed/medium.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-blog',
@@ -7,10 +10,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  
   @Input() screenSize;
 
+  posts: any[] = [];
+
+  constructor(private mediumService: MediumService,private router: Router) { }
+
   ngOnInit(): void {
+    this.mediumService.getPosts().subscribe(posts => {
+      this.posts = posts;
+    });
   }
 
+  goToHome(){
+    this.router.navigate(['/']); // navigates to /blog route
+
+  }
+  
 }

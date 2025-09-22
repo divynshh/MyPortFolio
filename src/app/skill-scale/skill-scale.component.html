@@ -1,14 +1,9 @@
 <div class="skill-scale">
-    
-        <div class="title">{{skillName}}</div>
-    
-
-    <div class="rating">
-      
-    <span *ngFor="let i of ratingArray;index as id">
-        <span *ngIf="i==true" class="fa fa-star checked"></span>
-        <span *ngIf="i==false" class="fa fa-star-o"></span>
+    <span class="skill-name">{{ skillName }}</span>
+    <span class="stars">
+      <span *ngFor="let i of ratingArray">
+        <i class="fa" [ngClass]="i ? 'fa-star filled' : 'fa-star-o'"></i>
+      </span>
     </span>
-    
-   </div>
-</div>
+  </div>
+  
